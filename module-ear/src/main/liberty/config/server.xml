@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Dandelion IOT server">
+    <featureManager>
+        <feature>cdi-2.0</feature>
+        <feature>beanValidation-2.0</feature>
+        <feature>appSecurity-3.0</feature>
+        <feature>managedBeans-1.0</feature>
+        <feature>ejbLite-3.2</feature>
+        <feature>jca-1.7</feature>
+        <feature>jndi-1.0</feature>
+        <feature>mdb-3.2</feature>
+        <feature>localConnector-1.0</feature>
+    </featureManager>
+
+    <activationSpec id="jca-application/jca-web/TailSyslog">
+        <properties.jca-application.jca-resourceAdapter/>
+    </activationSpec>
+
+    <basicRegistry id="basic" realm="BasicRealm"/>
+    <httpSession securityIntegrationEnabled="false"/>
+    <httpEndpoint id="defaultHttpEndpoint" httpPort="8080" httpsPort="9443">
+        <httpOptions http2="enabled"/>
+    </httpEndpoint>
+    <webContainer disableXPoweredBy="true"/>
+    <applicationManager autoExpand="true"/>
+    <applicationMonitor updateTrigger="mbean"/>
+</server>
