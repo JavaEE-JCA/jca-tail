@@ -14,11 +14,11 @@
     limitations under the License.
 -->
 <resources>
-    <Resource id="FileSystemWatcherResourceAdapter" class-name="ir.moke.jca.adapter.TailResourceAdapter">
+    <Resource id="tailerResourceAdapter" class-name="ir.moke.jca.adapter.TailResourceAdapter">
     </Resource>
 
-    <Container id="fsWatcherContainer" ctype="MESSAGE">
-        ResourceAdapter=FileSystemWatcherResourceAdapter
+    <Container id="tailerContainer" ctype="MESSAGE">
+        ResourceAdapter=tailerResourceAdapter
         ActivationSpecClass=ir.moke.jca.adapter.TailActivationSpec
         MessageListenerInterface=ir.moke.jca.api.TailListener
     </Container>
